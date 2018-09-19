@@ -2,20 +2,43 @@ public class Array {
     private int size;
     private int[] data;
 
-    public Array(int capicaty){
-        data = new int[capicaty];
+    /**
+     * 创建元素个数为 capacity 的数组
+     * @param capacity
+     */
+    public Array(int capacity){
+        data = new int[capacity];
     }
 
+    /***
+     * 默认的构造函数  初始容量为10
+     */
     public Array(){
         this(10);
     }
 
+    /**
+     * 获取数组元素的个数
+     * @return
+     */
     public int getSize() {
         return size;
     }
 
-    public int getCapicaty(){
+    /**
+     * 获取数组的容量
+     * @return
+     */
+    public int getCapacity(){
         return data.length;
+    }
+
+    /**
+     * 判断数组元素是否为空
+     * @return
+     */
+    public boolean isEmpty(){
+        return size == 0;
     }
 }
 
