@@ -40,5 +40,17 @@ public class Array {
     public boolean isEmpty(){
         return size == 0;
     }
+
+    /**
+     * 向数组中最后的位置添加元素
+     * @param e
+     */
+    public void addLast(int e){
+        if (size == data.length){
+            throw new IllegalStateException("add last failed,the array is full");
+        }
+        data[size] = e;
+        size++;
+    }
 }
 
