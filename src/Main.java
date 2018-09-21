@@ -21,6 +21,14 @@ public class Main {
         for(int i = 0;i < 15; i++){
             ary.addLast(i);
         }
+
+        ary.addFirst(-1);
         System.out.print(ary);
+
+        ary.set(0,1000);
+
+        ary.set(19,300);
+
+        System.out.println(ary);
     }
 }

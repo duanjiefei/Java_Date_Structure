@@ -18,6 +18,29 @@ public class Array {
     }
 
     /**
+     * 查询数组索引为index 的元素
+     * @param index
+     * @return
+     */
+     int get(int index){
+         if (index < 0 || index >= size){
+             throw  new IllegalArgumentException("get failed, index is not illegal");
+         }
+        return  data[index];
+     }
+
+    /**
+     * 设置元素索引为index 的值
+     * @param index
+     * @param e
+     */
+     void set(int index, int e){
+         if (index < 0 || index >= size){
+             throw  new IllegalArgumentException("set failed, index is not illegal");
+         }
+        data[index] = e;
+     }
+    /**
      * 获取数组元素的个数
      * @return
      */
@@ -86,8 +109,8 @@ public class Array {
     @Override
     public String toString(){
         StringBuilder res = new StringBuilder();
-        //res.append(String.format("Array size = %d, Array capacity == %d",size,getCapacity()));
-        System.out.println(String.format("Array size = %d, Array capacity == %d",size,getCapacity()));
+        res.append(String.format("Array size = %d, Array capacity == %d\n",size,getCapacity()));
+        //System.out.println(String.format("Array size = %d, Array capacity == %d",size,getCapacity()));
         res.append("[");
         for (int i = 0; i < size; i++){
             res.append(data[i]);
@@ -95,7 +118,8 @@ public class Array {
                 res.append(", ");
             }
         }
-        res.append("]");
+        res.append("]\n");
+        res.append("-----------------------------\n");
         return res.toString();
     }
 }
