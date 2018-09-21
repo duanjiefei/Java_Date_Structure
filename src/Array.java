@@ -82,5 +82,21 @@ public class Array {
         data[index] = e;
         size++;
     }
+
+    @Override
+    public String toString(){
+        StringBuilder res = new StringBuilder();
+        //res.append(String.format("Array size = %d, Array capacity == %d",size,getCapacity()));
+        System.out.println(String.format("Array size = %d, Array capacity == %d",size,getCapacity()));
+        res.append("[");
+        for (int i = 0; i < size; i++){
+            res.append(data[i]);
+            if (i != size-1){
+                res.append(", ");
+            }
+        }
+        res.append("]");
+        return res.toString();
+    }
 }
 
