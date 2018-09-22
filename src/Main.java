@@ -27,8 +27,11 @@ public class Main {
 
         ary.set(0,1000);
 
-        ary.set(19,300);
+       // ary.set(19,300);
 
+        System.out.println(ary);
+
+        ary.remove(0);
         System.out.println(ary);
     }
 }

@@ -106,6 +106,77 @@ public class Array {
         size++;
     }
 
+    /**
+     * 判断数组中是否存在元素 e
+     * @param e
+     * @return
+     */
+    public boolean isContain(int e){
+        for (int i=0;i < size; i++){
+            if (e == data[i]){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * 查找数组中元素e 的索引，如果不存在元素e ，返回-1；
+     * @param e
+     * @return
+     */
+    public int find(int e){
+        for (int i = 0;i < size; i++){
+            if (e == data[i]){
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    /**
+     * 删除数组中的某个元素
+     * @param index  需要删除的元素的索引
+     * @return  将删除的元素进行返回
+     */
+    public int remove(int index){
+        if(index < 0 || index >= size){
+            throw  new IllegalArgumentException("remove failed ,index is illegal");
+        }
+        int ret = data[index];
+        for (int i = index + 1;i < size; i++){
+             data[i-1] =data[i];
+        }
+        size --;
+        return ret;
+    }
+
+    /**
+     * 将指定元素进行删除
+     * @param e
+     */
+    public void removeElement(int e ){
+        int index = find(e);
+        if (index!=-1){
+            remove(index);
+        }
+    }
+
+    /**
+     * 将数组的第一个元素进行删除
+     */
+    public int removeFirst(){
+        return remove(0);
+    }
+
+
+    /**
+     * 将数组的最后一个元素进行删除
+     * @return
+     */
+    public  int removeLast(){
+        return remove(size-1);
+    }
     @Override
     public String toString(){
         StringBuilder res = new StringBuilder();
