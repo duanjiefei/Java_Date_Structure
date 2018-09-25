@@ -16,9 +16,9 @@ public class Main {
         }*/
 
         //测试自己的数组
-        Array ary  = new Array(20);
+        Array ary  = new Array();
 
-        for(int i = 0;i < 15; i++){
+        for(int i = 0;i < 10; i++){
             ary.addLast(i);
         }
 
@@ -32,6 +32,7 @@ public class Main {
         System.out.println(ary);
 
         ary.remove(0);
+        //ary.remove(0);
         System.out.println(ary);
     }
 }

@@ -91,12 +91,12 @@ public class Array<E> {
      * @param e
      */
     public void add(int index, E e){
-        if (size == data.length){
-            throw  new IllegalArgumentException("Add failed,the array is full");
-        }
-
         if (index < 0 || index > data.length){
             throw  new IllegalArgumentException("index is not legal ,add failed");
+        }
+
+        if (size == data.length){
+           resize(2 * size);  //注意参数的选择  size  not data.length
         }
 
         for (int i = size - 1;i >= index; i--){
@@ -104,6 +104,20 @@ public class Array<E> {
         }
         data[index] = e;
         size++;
+    }
+
+    /**
+     * 对数组容量进行变更
+     * @param newCapicaty
+     */
+    private void resize(int newCapicaty) {
+        E[] newArray = (E[]) new Object[newCapicaty];
+        for (int i = 0; i < size; i++){
+            //System.out.println("i == "+ i);
+            newArray[i]  = data[i];
+        }
+        data = newArray;
+
     }
 
     /**
@@ -148,6 +162,9 @@ public class Array<E> {
              data[i-1] =data[i];
         }
         size --;
+        if (size == data.length/2){
+            resize(data.length/2);//对数组进行缩容
+        }
         return ret;
     }
 
