@@ -29,6 +29,14 @@ public class Array<E> {
         return  data[index];
      }
 
+     E getFirst(){
+         return get(0);
+     }
+
+     E getLast(){
+         return  get(size-1);
+     }
+
     /**
      * 设置元素索引为index 的值
      * @param index
