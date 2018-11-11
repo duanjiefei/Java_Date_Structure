@@ -2,6 +2,8 @@ public class Main {
 
     /**
      * 数组的基本使用
+     *
+     * 测试新的git 环境
      * @param args
      */
     public static void main(String[] args) {
